@@ -1,0 +1,700 @@
+[gd_scene format=3 uid="uid://dxsby5tbaqku4"]
+
+[ext_resource type="Script" uid="uid://kx5glu37mv72" path="res://scripts/Generate field.gd" id="1_3rjh4"]
+[ext_resource type="Script" uid="uid://cy8ftehnq70jg" path="res://scripts/main.gd" id="1_m6yd5"]
+[ext_resource type="Script" uid="uid://dyyby84voteoh" path="res://scripts/Checkbox_XYZ.gd" id="2_4b4it"]
+[ext_resource type="Script" uid="uid://dhxb3e1kkwv67" path="res://scripts/3D_representation.gd" id="4_acw1b"]
+[ext_resource type="Script" uid="uid://bhu36yr2vycx2" path="res://szenes/camera_copy_values.gd" id="5_dce7b"]
+[ext_resource type="Script" uid="uid://c1clqenlp8dg3" path="res://scripts/camera.gd" id="5_drcd3"]
+[ext_resource type="Texture2D" uid="uid://clgu0wj821sa4" path="res://assets/2D_grid.png" id="7_rfvpj"]
+
+[sub_resource type="Environment" id="Environment_4b4it"]
+background_mode = 1
+background_color = Color(0.7730599, 0.85043114, 0.99999887, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfvpj"]
+albedo_color = Color(1, 0.34117648, 0.34117648, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rfvpj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrd6t"]
+bg_color = Color(0.258824, 0.478431, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drcd3"]
+bg_color = Color(0.258824, 0.478431, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dce7b"]
+bg_color = Color(0.258824, 0.478431, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fqsc"]
+bg_color = Color(0.25882354, 0.47843137, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfvpj"]
+bg_color = Color(0.258824, 0.478431, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rfvpj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drcd3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u7soi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrd6t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8y1qm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fxio"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1u38"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eqcsw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4b7o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yshdg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_563k3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vfddp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndrdx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vi1ox"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffdg1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_urgv8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ec5c3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qti23"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shyy7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wt14k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4iuub"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opp56"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vjiip"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xevob"]
+
+[node name="main" type="Node3D" unique_id=1229086122]
+script = ExtResource("1_m6yd5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=536988701]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1863208295]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=955321070]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer" unique_id=1260355490]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer" unique_id=309622231]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(503, 725)
+render_target_update_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=1542836449]
+environment = SubResource("Environment_4b4it")
+script = ExtResource("4_acw1b")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/WorldEnvironment" unique_id=319390784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 6, 6, 6)
+spring_length = 20.0
+margin = 0.0
+script = ExtResource("5_drcd3")
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport/WorldEnvironment/SpringArm3D" unique_id=1013088753]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport" unique_id=1602670963]
+material_override = SubResource("StandardMaterial3D_rfvpj")
+mesh = SubResource("SphereMesh_rfvpj")
+
+[node name="SubViewport2" type="SubViewport" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer" unique_id=895362026]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(503, 725)
+render_target_update_mode = 4
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport2" unique_id=794764314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 6, 6, 6)
+spring_length = 20.0
+margin = 0.0
+script = ExtResource("5_dce7b")
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/HBoxContainer/VBoxContainer/SubViewportContainer/SubViewport2/SpringArm3D" unique_id=722334645]
+current = true
+far = 100.0
+
+[node name="Controls" type="VBoxContainer" parent="CanvasLayer/HBoxContainer" unique_id=1132774976]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+script = ExtResource("1_3rjh4")
+
+[node name="Options" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls" unique_id=801200652]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rrd6t")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Options" unique_id=266414677]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Options/MarginContainer" unique_id=620159014]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Menue" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Options/MarginContainer/HBoxContainer" unique_id=257582680]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "Menu"
+script = ExtResource("2_4b4it")
+
+[node name="Visibility" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Options/MarginContainer/HBoxContainer" unique_id=1376631688]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "Visibility"
+script = ExtResource("2_4b4it")
+
+[node name="Slice" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Options/MarginContainer/HBoxContainer" unique_id=1809214102]
+layout_mode = 2
+size_flags_horizontal = 3
+action_mode = 0
+text = "Slice"
+script = ExtResource("2_4b4it")
+
+[node name="Top_Panel" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls" unique_id=291485099]
+layout_mode = 2
+
+[node name="2D_Slice" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel" unique_id=101403151]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice" unique_id=1274621755]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_drcd3")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer" unique_id=562508261]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer" unique_id=1915840700]
+layout_mode = 2
+
+[node name="HBoxContainer_titel" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer" unique_id=593890623]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=919077397]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel/MarginContainer" unique_id=474048663]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1872148481]
+layout_mode = 2
+text = "1"
+
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1183617188]
+layout_mode = 2
+text = "2"
+
+[node name="Label4" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1589367189]
+layout_mode = 2
+text = "3"
+
+[node name="Label5" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1472585442]
+layout_mode = 2
+text = "4"
+
+[node name="Label6" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=408462834]
+layout_mode = 2
+text = "5"
+
+[node name="Label7" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1200714570]
+layout_mode = 2
+text = "6"
+
+[node name="Label8" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=1007080324]
+layout_mode = 2
+text = "7"
+
+[node name="Label9" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=332025622]
+layout_mode = 2
+text = "8"
+
+[node name="Label10" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer_titel" unique_id=683074717]
+layout_mode = 2
+text = "9"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer" unique_id=1415800436]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1042603614]
+layout_mode = 2
+theme_override_constants/margin_right = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=507237989]
+layout_mode = 2
+text = "X"
+
+[node name="Check X1" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1455322346]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X2" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=541487140]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X3" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1919151331]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X4" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1580286427]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X5" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1955679865]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X6" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1001153218]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X7" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=492403900]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X8" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1271327037]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check X9" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1401131058]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer" unique_id=478358388]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=335400409]
+layout_mode = 2
+theme_override_constants/margin_right = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer" unique_id=1807610992]
+layout_mode = 2
+text = "Y"
+
+[node name="Check Y1" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1197343973]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y2" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=889801404]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y3" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=330345238]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y4" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=669468576]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y5" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1832126911]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y6" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=429140369]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y7" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=71702250]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y8" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=256480249]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Y9" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2088345942]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer" unique_id=149587723]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2070334774]
+layout_mode = 2
+theme_override_constants/margin_right = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer" unique_id=1128047230]
+layout_mode = 2
+text = "Z"
+
+[node name="Check Z1" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=789890365]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z2" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1810721351]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z3" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2139177087]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z4" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=609305619]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z5" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2106150240]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z6" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2127081784]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z7" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2019082045]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z8" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1075528757]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="Check Z9" type="CheckBox" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1307322255]
+layout_mode = 2
+script = ExtResource("2_4b4it")
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice" unique_id=1295981397]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dce7b")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer2" unique_id=1083294851]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer2/MarginContainer" unique_id=322140778]
+layout_mode = 2
+texture = ExtResource("7_rfvpj")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/2D_Slice/PanelContainer2/MarginContainer" unique_id=1413422913]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 9
+
+[node name="Visibility" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel" unique_id=1206723269]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fqsc")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Visibility" unique_id=866457391]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Visibility/MarginContainer" unique_id=1337702718]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Swap" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Visibility/MarginContainer/VBoxContainer" unique_id=454301595]
+layout_mode = 2
+action_mode = 0
+text = "swap visibility"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Invis" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Visibility/MarginContainer/VBoxContainer" unique_id=1290395819]
+layout_mode = 2
+action_mode = 0
+text = "make invisible"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Visible" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Visibility/MarginContainer/VBoxContainer" unique_id=1935889348]
+layout_mode = 2
+action_mode = 0
+text = "make all visible
+"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Menue" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel" unique_id=1157418994]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5fqsc")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue" unique_id=525556987]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue/MarginContainer" unique_id=1710362384]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Game 1" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue/MarginContainer/VBoxContainer" unique_id=373563138]
+layout_mode = 2
+action_mode = 0
+text = "Game 1   (very easy)"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Game 2" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue/MarginContainer/VBoxContainer" unique_id=277756227]
+layout_mode = 2
+action_mode = 0
+text = "Game 2   (easy)"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Game 3" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue/MarginContainer/VBoxContainer" unique_id=1041776085]
+layout_mode = 2
+action_mode = 0
+text = "Game 3   (less easy)"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Game 4" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Top_Panel/Menue/MarginContainer/VBoxContainer" unique_id=1606167752]
+layout_mode = 2
+action_mode = 0
+text = "New generated game"
+alignment = 0
+script = ExtResource("2_4b4it")
+
+[node name="Numpad" type="PanelContainer" parent="CanvasLayer/HBoxContainer/Controls" unique_id=912509564]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_rfvpj")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad" unique_id=2008358073]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer" unique_id=1458000652]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer" unique_id=1842720441]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Pad 7" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2007787449]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_rfvpj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_drcd3")
+action_mode = 0
+text = "7"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 8" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1069878834]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_u7soi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rrd6t")
+action_mode = 0
+text = "8"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 9" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1382489590]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8y1qm")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4fxio")
+action_mode = 0
+text = "9"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="full" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1851402230]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_8y1qm")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4fxio")
+toggle_mode = true
+action_mode = 0
+text = "9"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer" unique_id=1166425294]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Pad 4" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2032350050]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_i1u38")
+theme_override_styles/focus = SubResource("StyleBoxTexture_eqcsw")
+action_mode = 0
+text = "4"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 5" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=93244755]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_t4b7o")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yshdg")
+action_mode = 0
+text = "5"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 6" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=333039992]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_563k3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vfddp")
+action_mode = 0
+text = "6"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="pencil" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=864255061]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/disabled = SubResource("StyleBoxTexture_563k3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vfddp")
+toggle_mode = true
+action_mode = 0
+text = "123"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer" unique_id=1747588376]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="Pad 1" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=272911469]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ndrdx")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vi1ox")
+action_mode = 0
+text = "1"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 2" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1860621752]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ffdg1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_urgv8")
+action_mode = 0
+text = "2"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad 3" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=2125876802]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ec5c3")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qti23")
+action_mode = 0
+text = "3"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer" unique_id=1825939548]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Back" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1189869965]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_shyy7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wt14k")
+action_mode = 0
+text = "<"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Pad Del" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1890687421]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4iuub")
+theme_override_styles/focus = SubResource("StyleBoxTexture_opp56")
+action_mode = 0
+text = "X"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Forward" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1217571878]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vjiip")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xevob")
+action_mode = 0
+text = ">"
+clip_text = true
+script = ExtResource("2_4b4it")
+
+[node name="Check" type="Button" parent="CanvasLayer/HBoxContainer/Controls/Numpad/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=1947490712]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/disabled = SubResource("StyleBoxTexture_vjiip")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xevob")
+action_mode = 0
+text = "🗸"
+clip_text = true
+script = ExtResource("2_4b4it")
